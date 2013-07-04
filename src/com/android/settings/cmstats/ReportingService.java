@@ -39,11 +39,6 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.Settings;
 
-import com.google.analytics.tracking.android.GoogleAnalytics;
-import com.google.analytics.tracking.android.Tracker;
-
-import com.android.settings.R;
-
 public class ReportingService extends Service {
     protected static final String TAG = "CMStats";
 
@@ -85,6 +80,7 @@ public class ReportingService extends Service {
         Log.d(TAG, "SERVICE: Carrier=" + deviceCarrier);
         Log.d(TAG, "SERVICE: Carrier ID=" + deviceCarrierId);
 
+<<<<<<< HEAD
         // report to google analytics
         GoogleAnalytics ga = GoogleAnalytics.getInstance(this);
         Tracker tracker = ga.getTracker(getString(R.string.ga_trackingId));
@@ -105,6 +101,8 @@ public class ReportingService extends Service {
         tracker.close();
 
         // report to the cmstats service
+=======
+>>>>>>> parent of 4b00694... Add Google Analytics support.
         HttpClient httpclient = new DefaultHttpClient();
         HttpPost httppost = new HttpPost("http://stats.cyanogenmod.org/submit");
         try {
